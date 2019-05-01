@@ -8,9 +8,9 @@ import javax.swing.JLabel;
 import jp.co.Othello.Params.color;
 
 public class Turn extends JLabel {
-	color BLACK = Params.color.BLACK;
-	color WHITE = Params.color.WHITE;
-
+	/**
+	 * ターンの保持
+	 */
 	public static color turn = Params.color.BLACK;
 
 	public Turn() {
@@ -21,6 +21,9 @@ public class Turn extends JLabel {
 		turnView();
 	}
 
+	/**
+	 * ターン表示する
+	 */
 	public void turnView() {
 		switch (turn) {
 		case BLACK:
@@ -33,13 +36,16 @@ public class Turn extends JLabel {
 		}
 	}
 
+	/**
+	 * ターンを入れ替える
+	 */
 	public void turnChange() {
 		switch (turn) {
 		case BLACK:
-			turn = WHITE;
+			turn = Params.color.WHITE;
 			break;
 		case WHITE:
-			turn = BLACK;
+			turn = Params.color.BLACK;
 			break;
 		default:
 		}

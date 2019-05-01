@@ -78,17 +78,26 @@ public class GamePanel extends JPanel implements ActionListener {
 
 			// ゲーム終了判定
 			if (piece.isSkipTurn()) {
-				viewPiece();
+
+				//盤面の数をカウント
 				int black = piece.pieceCollorCount()[0];
 				int white = piece.pieceCollorCount()[1];
+
+				// ピースを再描画
+				viewPiece();
+
+				//結果を表示
 				JFrame frame = new JFrame();
+				String message = "黒" + black + "," + "白" + white + "\n";
 				if (black < white) {
-					JOptionPane.showMessageDialog(frame, "黒" + black + "," + "白" + white + "\n" + "白の勝ち");
+					JOptionPane.showMessageDialog(frame, message + "白の勝ち");
 				} else if (white < black) {
-					JOptionPane.showMessageDialog(frame, "黒" + black + "," + "白" + white + "\n" + "黒の勝ち");
+					JOptionPane.showMessageDialog(frame, message + "黒の勝ち");
 				} else {
-					JOptionPane.showMessageDialog(frame, "黒" + black + "," + "白" + white + "\n" + "引き分け");
+					JOptionPane.showMessageDialog(frame, message + "引き分け");
 				}
+
+				//パネルを最初の画面へ変更
 				View.layout.first(View.cardPanel);
 				View.turn.setVisible(false);
 			}
@@ -100,6 +109,10 @@ public class GamePanel extends JPanel implements ActionListener {
 		// ターン表示を再描画
 		View.turn.turnView();
 	}
+
+	/**
+	 * 全てのマスを描画する
+	 */
 
 	public void viewPiece() {
 		// 全マスチェック

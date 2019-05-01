@@ -56,6 +56,7 @@ public class StartPanel extends JPanel {
 		endButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				// プログラム終了
 				System.exit(0);
 			}
 		});

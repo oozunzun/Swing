@@ -1,7 +1,8 @@
-package jp.co.Othello;
+package jp.co.Tic_Tac_Toe;
 
-public class Main {
+public class GameMain {
+
 	public static void main(String[] args) {
 		new View();
-	}
+	};
 }

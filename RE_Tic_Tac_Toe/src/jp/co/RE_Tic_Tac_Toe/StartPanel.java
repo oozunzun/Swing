@@ -1,4 +1,4 @@
-package jp.co.Othello;
+package jp.co.RE_Tic_Tac_Toe;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -19,7 +19,7 @@ public class StartPanel extends JPanel {
 	public StartPanel() {
 		setLayout(null);
 
-		JLabel title = new JLabel("オセロゲーム");
+		JLabel title = new JLabel("○×ゲーム");
 		title.setFont(new Font(Font.SERIF, Font.BOLD, 35));
 		title.setBounds(0, centerHeight / 2, width, 50);
 		title.setHorizontalAlignment(JLabel.CENTER);
@@ -29,17 +29,7 @@ public class StartPanel extends JPanel {
 		startButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// ターンの初期化
-				Turn.turn = Params.color.BLACK;
-				View.turn.turnView();
-				View.turn.setVisible(true);
-
-				// ピースの初期化
-				Piece square = new Piece();
-				square.pieceSetting();
-				View.gamePanel.viewPiece();
-
-				// ゲーム画面へ遷移
+				// コンフィグ画面へ遷移
 				View.layout.next(View.cardPanel);
 			}
 		});

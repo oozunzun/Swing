@@ -1,4 +1,4 @@
-package jp.co.action;
+package jp.co.Tic_Tac_Toe;
 
 import java.awt.Color;
 import java.awt.Font;
